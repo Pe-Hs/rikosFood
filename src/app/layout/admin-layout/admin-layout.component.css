@@ -1,0 +1,40 @@
+.example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.example-sidenav {
+    user-select: none;
+    background-color: #25262D;
+    border-right: 0px;
+    width: 250px;
+}
+
+.avatar{
+    height: 35px;
+    width: 35px;
+    background-color: green;
+    border-radius: 50%;
+}
+
+.img-avatar{
+    height: 35px;
+    width: 35px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+::ng-deep .mat-menu-panel{
+    min-width: 175px !important;
+    border-radius: 0px !important;
+}
+
+.button-toolbar{
+    height: 100%;
+}
+
+::ng-deep .mat-form-field-underline {
+    display: none;
+}

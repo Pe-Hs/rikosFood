@@ -1,0 +1,77 @@
+<div style="padding: 10px;">
+
+    <button type="button" mat-icon-button routerLink="./auth/login"> 
+        <mat-icon>keyboard_backspace</mat-icon>
+    </button>
+
+    <!-- <a routerLink="./auth"> < Regresar </a> -->
+    
+    <div fxLayout="column" fxLayoutAlign="center center">
+        
+        <h1> Registrar Cuenta </h1>
+    
+        <div fxLayout="column" fxLayoutGap="5">
+    
+            <form [formGroup]="controlForm" fxLayout="column" fxLayoutGap="5">
+    
+                <mat-form-field appearance="outline">
+                    <mat-label>Usuario</mat-label>
+                    <input type="text" matInput formControlName="usuario" required>
+                    <span matPrefix> <mat-icon>person</mat-icon> </span>
+                    <mat-error *ngIf="controlForm.get('usuario')?.hasError('required')">Ingrese <Strong> Usuario</Strong> </mat-error>
+                </mat-form-field>
+    
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput formControlName="email" required>
+                    <span matPrefix> <mat-icon>email</mat-icon> </span>
+                    <mat-error *ngIf="controlForm.get('email')?.hasError('required')">Ingrese <Strong> Email </Strong> </mat-error>
+                    <mat-error *ngIf="controlForm.get('email')?.hasError('email')">Ingrese email <Strong> Valido </Strong> </mat-error>
+                </mat-form-field>
+    
+                <mat-form-field appearance="outline">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+                    <button mat-icon-button matSuffix (click)="hide = !hide" >
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <span matPrefix> <mat-icon>lock</mat-icon> </span>
+                    <mat-error *ngIf="controlForm.get('password')?.hasError('required')">Ingrese <Strong> Contraseña </Strong> </mat-error>
+                    <mat-error *ngIf="!controlForm.get('password')?.hasError('required') && !controlForm.get('password')?.hasError('minLength')">Ingrese minimo <Strong> 6 Caracteres </Strong> </mat-error>
+                </mat-form-field>
+    
+                <mat-form-field appearance="outline">
+                    <mat-label>Confirmar Contraseña</mat-label>
+                    <input matInput [type]="hide2 ? 'password' : 'text'" formControlName="passwordConfir" required>
+                    <button type="button" mat-icon-button matSuffix (click)="hide2 = !hide2">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <span matPrefix> <mat-icon>lock</mat-icon> </span>
+                    <mat-error *ngIf="controlForm.get('passwordConfir')?.hasError('required')">Ingrese <Strong> Confirmacion </Strong> </mat-error>                 
+                </mat-form-field>
+    
+                <div style="height: 10px;" fxLayoutAlign="center center">
+                    <mat-error style="font-size: 11px;" *ngIf="controlForm.errors?.['notmatched'] && (controlForm.touched || controlForm.dirty) ">Contraseña <Strong> No es Igual </Strong> </mat-error>
+                </div>
+                
+                <br>
+
+                <button type="submit" mat-raised-button color="primary"  (keyup.enter)="register()" (click)="register()" [disabled]="controlForm.invalid">
+                    Registrar Cuenta
+                </button>
+
+                <div style="height: 10px; padding-top: 20px;" fxLayoutAlign="center center">
+                   <span>Ya tiene Cuenta? &nbsp; </span>  <a routerLink="./auth"> Inciar Sesion </a>
+                </div>
+
+            </form>
+    
+        </div>
+    
+        <div fxLayout="column" fxLayoutGap="5">
+            <br>
+        </div>
+    
+    </div>
+</div>
+

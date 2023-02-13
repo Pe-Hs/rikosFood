@@ -1,0 +1,51 @@
+<div style="padding: 10px;">
+
+    <div fxLayout="column" fxLayoutAlign="center center">
+
+        <div style="height: 110px;"></div>
+
+        <h1> Iniciar Sesion</h1>
+
+        <div fxLayout="column" fxLayoutGap="5">
+
+            <form [formGroup]="controlForm" fxLayout="column" fxLayoutGap="5">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Usuario</mat-label>
+                    <input type="text" matInput formControlName="usuario" required>
+                    <span matPrefix> <mat-icon>person</mat-icon> </span>
+                    <mat-error *ngIf="controlForm.get('usuario')?.hasError('required')" > Ingrese <strong> Usuario </strong> </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+                    <button type="button" mat-icon-button matSuffix (click)="hide = !hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <span matPrefix> <mat-icon>lock</mat-icon> </span>
+                    <mat-error *ngIf="controlForm.get('password')?.hasError('required')" > Ingrese <strong> Contraseña </strong> </mat-error>
+                    <mat-error *ngIf="!controlForm.get('password')?.hasError('required') && !controlForm.get('password')?.hasError('minLength')" > Ingrese <strong> 6 Digitos min </strong> </mat-error>
+                </mat-form-field>
+
+                <button type="submit" mat-raised-button color="primary" (click)="login()">
+                    Inciar Sesion
+                </button>
+
+            </form>
+
+        </div>
+
+        
+
+        <div fxLayout="column" fxLayoutGap="5">
+            <br>
+            <a style="color: blueviolet;" routerLink="/auth/register">Registrar Cuenta</a>
+        </div>
+
+        <div style="height: 105px;"></div>
+
+    </div>
+
+
+</div>

@@ -1,0 +1,145 @@
+.example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.example-sidenav {
+    user-select: none;
+    background-color: #cccccc;
+    border-right: 0px;
+    width: 350px;
+}
+
+.avatar{
+    height: 35px;
+    width: 35px;
+    background-color: green;
+    border-radius: 50%;
+}
+
+.img-avatar{
+    height: 35px;
+    width: 35px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+.home-toolbar{
+    padding: 5px;
+    background-color: rgb(253, 216, 93);
+    height: auto;
+}
+
+/* .button-toolbar{
+    height: 100%;
+} */
+
+.shooping-button{
+    font-size: 30px;
+}
+
+.buscador{
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    padding: 3px;
+    width: 50%;
+    height: 40px;
+}
+
+.buscador mat-icon{
+    padding-left: 10px;
+}
+
+.buscador mat-form-field{
+    width: 100%;
+}
+
+.barra-buscador{
+    width: 100%;
+}
+
+.header-contact{
+    height: 100px;
+}
+
+.up-banner{
+    width: 100%;
+    background-color: rgb(37, 94, 44);
+    font-size: 15px;
+    font-weight: 250;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    color: white;
+}
+
+.up-banner mat-icon{
+    color: white;
+}
+
+.up-banner p{
+    margin-bottom: 0;
+}
+
+.logo {
+    width: 150px;
+    height: 90px;
+    padding-left: 10px;
+    object-fit: contain;
+}
+
+.logo-inverted {
+    width: 150px;
+    height: 90px;
+    padding-left: 10px;
+    object-fit: contain;
+    filter: invert(50%);
+}
+
+::ng-deep .mat-form-field-underline {
+    display: none;
+}
+
+.footer-cli{
+    background-color: rgb(56, 56, 56);
+    width: 100%;
+    bottom: 0;
+    height: 350px;
+    padding: 30px;
+    color: white;
+}
+
+.historia{
+    text-align: justify;
+}
+
+.mat-divider{
+    border-top-color: rgb(255, 255, 255) !important;
+}
+
+.botton-banner{
+    background-color: rgb(43, 43, 43);
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.botton-banner p{
+    margin-bottom: 0;
+}
+
+.contact-bot{
+   padding: 0;
+}   
+
+.contact-bot h4{
+    margin-bottom: 0;
+}
+
+.contact-bot h5{
+    margin-bottom: 0;
+}
